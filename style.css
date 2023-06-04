@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
 body{
     background-color: #758AD9;
+    font-family: 'Comfortaa', cursive;
 }
 .heading{
     display: flex;
     justify-content: center;
     margin: 50px;
     font-size: 80px;
+    color: #23272A;
+    font-weight: 900;
     font-family: cursive;
 }
 
 #main-container{
     display: flex;
     justify-content: center;
+    gap: 40px;
+    align-items: center;
 }
 
 #grid{
@@ -29,4 +36,25 @@ body{
 
 .hover-effect{
     background: black;
+}
+
+#box{
+    width: 120px;
+    height: 40px;
+    background: #2C2F33;
+    border: 6px solid #23272A;
+    border-radius: 9px;
+    display: inherit;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons{
+    background: #B9B9B9;
+    border: none;
+    border-radius: 8px;
+    width: 58px;
+    height: 50px;
+    font-family: inherit;
 }

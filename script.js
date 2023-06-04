@@ -12,13 +12,20 @@ const black = (target) => {
 }
 
 const remove = () => {
-
+    grid.textContent=""
+    makeDivs(256)
 }
 
 
 makeDivs(256);
 grid.addEventListener('mousemove', (e) =>{
     if(e.target.id === "grid") return
-    console.log(e.target)
+    console.log(e.target.class)
     black(e.target)
+
+})
+
+const button = document.querySelector('button')
+button.addEventListener('click',() => {
+    remove()
 })
