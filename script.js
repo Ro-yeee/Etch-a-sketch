@@ -1,13 +1,14 @@
-let eraserClicked = false
+let eraseMode = false
+let rainbowMode = false
 const grid = document.getElementById('grid');    
-const buttons = document.querySelectorAll('button')           //  getting the grid
+const buttons = document.querySelectorAll('button')
 const eraserButton = buttons[0]
 const rainbowButton = buttons[1]
 const clearButton = buttons[2]
 
 let mouseDown = false
-document.body.onmousedown = () => (mouseDown = true)
-document.body.onmouseup = () => (mouseDown = false)
+grid.onmousedown = () => (mouseDown = true)
+grid.onmouseup = () => (mouseDown = false)
 
  //  function for making divs 
 const makeDivs = (numDivs) => {
@@ -15,11 +16,6 @@ for (let i = 0; i < numDivs; i++){
     let cells = document.createElement('div');
     grid.appendChild(cells)    
     }
-}
-
-// function for coloring black
-const black = (target) => {
-    target.classList.add('hover-effect')
 }
 
 //  function for clearing the grid
@@ -38,10 +34,13 @@ makeDivs(256);
 const draw = () => {                                      
     grid.addEventListener('mousemove', (e) =>{
         if(e.target.id === "grid") return
-        if(!eraserClicked && mouseDown){
-            black(e.target)
-        }else if(eraserClicked && mouseDown){
-            e.target.classList.remove('hover-effect')
+        if(!eraseMode && mouseDown){
+            if(rainbowMode){
+                const color = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0")
+                e.target.style.background = color
+            }else e.target.style.background = "black"
+        }else if(eraseMode && mouseDown){
+            e.target.style.background = ""
         }
     })
 }
@@ -61,11 +60,12 @@ clearButton.addEventListener('click',() =>{
 
 eraserButton.addEventListener('click',() => {
     eraserButton.classList.toggle('clicked')
-    eraserClicked = toggle(eraserClicked)
+    eraseMode = toggle(eraseMode)
 })
 
 rainbowButton.addEventListener('click',() =>{
     rainbowButton.classList.toggle('clicked')
+    rainbowMode = toggle(rainbowMode)
 })
 
 draw()

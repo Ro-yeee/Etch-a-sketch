@@ -25,17 +25,13 @@ body{
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
     border: 6px solid #23272A;
-    border-radius: 14px;
+    border-radius: 8px;
 }
 
 #grid div {
     width: 20px;
     height: 20px;
-    border: 0.5px solid black;
-}
-
-.hover-effect{
-    background: black;
+    background-color: white;
 }
 
 #box{
@@ -43,7 +39,7 @@ body{
     height: 270px;
     background: #2C2F33;
     border: 6px solid #23272A;
-    border-radius: 9px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     flex-direction: column;
