@@ -1,10 +1,24 @@
-const container = document.getElementById('grid-container');
+const grid = document.getElementById('grid');
 
-function makeDivs(numDivs) {
+const makeDivs = (numDivs) => {
 for (let i = 0; i < numDivs; i++){
     let cells = document.createElement('div');
-    container.appendChild(cells)    
+    grid.appendChild(cells)    
     }
 }
 
+const black = (target) => {
+    target.classList.add('hover-effect')
+}
+
+const remove = () => {
+
+}
+
+
 makeDivs(256);
+grid.addEventListener('mousemove', (e) =>{
+    if(e.target.id === "grid") return
+    console.log(e.target)
+    black(e.target)
+})
