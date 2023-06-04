@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 body{
-    background-color: #758AD9;
+    background: #758AD9;
     font-family: 'Comfortaa', cursive;
 }
 .heading{
@@ -39,22 +39,39 @@ body{
 }
 
 #box{
-    width: 120px;
-    height: 40px;
+    width: 150px;
+    height: 270px;
     background: #2C2F33;
     border: 6px solid #23272A;
     border-radius: 9px;
-    display: inherit;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .buttons{
     background: #B9B9B9;
-    border: none;
-    border-radius: 8px;
-    width: 58px;
-    height: 50px;
+    border: 3px solid #23272A;
+    border-radius: 12px;
     font-family: inherit;
+    height: 44px;
+    transition: 0.1s;
+}
+.clear{
+    width: 62px;
+}
+.rainbow{
+    width: 122px;
+}
+.eraser{
+    background: #f54646;
+    width: 108px;
+}
+.popup{
+    transform: scale(1.1);
+}
+.clicked{
+    background: #54be46;
 }
