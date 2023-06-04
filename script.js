@@ -5,6 +5,9 @@ const eraserButton = buttons[0]
 const rainbowButton = buttons[1]
 const clearButton = buttons[2]
 
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
 
  //  function for making divs 
 const makeDivs = (numDivs) => {
@@ -35,12 +38,13 @@ makeDivs(256);
 const draw = () => {                                      
     grid.addEventListener('mousemove', (e) =>{
         if(e.target.id === "grid") return
-        if(!eraserClicked){
+        if(!eraserClicked && mouseDown){
             black(e.target)
-        }else{e.target.classList.remove('hover-effect')}
+        }else if(eraserClicked && mouseDown){
+            e.target.classList.remove('hover-effect')
+        }
     })
 }
-
 
 buttons.forEach(button => {
    button.addEventListener('mouseenter', () =>{
