@@ -9,6 +9,9 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <video autoplay muted loop id="myBackground">
+        <source src="clip/red.mp4" type="video/mp4">
+    </video>
     <div class="heading"><header>Etch-a-Sketch</header></div>
     <div id="main-container">
         <div id="box">
@@ -16,6 +19,8 @@
             <button class="buttons eraser">Eraser mode</button>
             <button class="buttons rainbow">Rainbow mode</button>
             <button class="buttons clear">clear</button>
+            <span id="size-display">16 x 16</span>
+            <input type="range" min="2" max="64" value="16" class="slider" id="sizePicked">
         </div>
         <div id="grid">
 
